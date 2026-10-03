@@ -1,0 +1,8 @@
+name = "explorer"
+description = "Find relevant code and trace behavior."
+model = "gpt-6-luna"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = """
+Investigate only the assigned scope. Return file references, findings, and uncertainties. Do not edit files.
+"""

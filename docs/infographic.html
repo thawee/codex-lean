@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Codex Lean — Agent Map</title>
+  <style>
+    :root { color-scheme: dark; --bg: #081419; --panel: #10242b; --edge: #294650; --text: #e8f2ef; --muted: #a5babd; --mint: #85efd0; --gold: #f5c77e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 48px 22px; background: radial-gradient(ellipse at 50% 0%, #16353c, transparent 65%), var(--bg); color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+    main { max-width: 1080px; margin: auto; }
+    header { text-align: center; margin-bottom: 34px; }
+    .eyebrow { color: var(--mint); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; }
+    h1 { font-size: clamp(36px, 7vw, 64px); letter-spacing: -.06em; line-height: 1.1; margin: 12px 0; }
+    header p { color: var(--muted); margin: 0; font-size: 18px; }
+    .card { border: 1px solid var(--edge); background: var(--panel); border-radius: 16px; padding: 22px; }
+    .coordinator { max-width: 540px; margin: auto; border-color: var(--mint); }
+    .card-head { display: flex; align-items: center; gap: 14px; }
+    .icon { width: 42px; height: 42px; flex: none; padding: 9px; background: #183a40; border-radius: 12px; color: var(--mint); }
+    .icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
+    .model { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--mint); font-size: 14px; overflow-wrap: anywhere; }
+    .card p { color: var(--muted); margin: 14px 0 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .tags span { padding: 3px 9px; border: 1px solid var(--edge); border-radius: 999px; font-size: 12px; color: var(--text); }
+    .connector { color: var(--mint); text-align: center; padding: 12px 0; font-size: 13px; }
+    .connector::before, .connector::after { content: ""; display: block; width: 1px; height: 16px; background: var(--mint); margin: 0 auto; opacity: .7; }
+    .connector span { display: inline-block; padding: 6px 12px; }
+    .helpers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; position: relative; }
+    .helpers::before { content: ""; position: absolute; top: -13px; left: 12.5%; right: 12.5%; height: 1px; background: var(--mint); opacity: .7; }
+    .helper { position: relative; }
+    .helper::before { content: ""; position: absolute; height: 13px; width: 1px; background: var(--mint); top: -14px; left: 50%; opacity: .7; }
+    .helper .card-head { display: block; }
+    .helper .icon { margin-bottom: 14px; }
+    .helper h2 { font-size: 19px; }
+    .helper .model { margin-top: 4px; }
+    .reviewer { border-color: #786546; }
+    .reviewer .icon { background: #3b352b; color: var(--gold); }
+    .reviewer .model { color: var(--gold); }
+    .result { max-width: 540px; text-align: center; margin: auto; background: #12332f; border-color: #357f6d; }
+    .result h2 { color: var(--mint); }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 36px 0 26px; padding: 26px 0; border-top: 1px solid var(--edge); border-bottom: 1px solid var(--edge); }
+    .principles strong { display: block; color: var(--text); font-size: 16px; }
+    .principles p { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+    footer { color: var(--muted); text-align: center; font-size: 12px; }
+    footer a { color: var(--mint); text-underline-offset: 3px; }
+    @media (max-width: 850px) {
+      .helpers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .helpers::before, .helper::before { display: none; }
+      .helper .card-head { display: flex; }
+      .helper .icon { margin-bottom: 0; }
+    }
+    @media (max-width: 520px) {
+      body { padding: 28px 16px; }
+      header p { font-size: 16px; }
+      .helpers, .principles { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+      .principles { gap: 18px; }
+    }
+    @media print {
+      body { padding: 16px; background: #fff; color: #14272c; }
+      :root { --panel: #f1f7f5; --text: #14272c; --muted: #455e64; --mint: #126b53; --gold: #805614; --edge: #9bb6bb; }
+      .icon, .reviewer .icon, .result { background: #e0eee9; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Shared settings · deliberate delegation</div>
+      <h1>Codex Lean</h1>
+      <p>One coordinator. Bounded tasks. Verified results.</p>
+    </header>
+
+    <section class="card coordinator" aria-labelledby="coordinator-title">
+      <div class="card-head">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 8v5M5 13h14M5 13v4M12 13v4M19 13v4"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg></div>
+        <div><h2 id="coordinator-title">Root / coordinator</h2><div class="model">gpt-6.1-sol</div></div>
+      </div>
+      <div class="tags"><span>medium effort</span><span>existing sandbox setting</span></div>
+      <p>Owns the plan, chooses useful helpers, integrates changes, and runs final verification. Handles simple tasks directly.</p>
+    </section>
+
+    <div class="connector" aria-hidden="true"><span>Delegate a clear scope · up to 3 helpers active</span></div>
+
+    <section class="helpers" aria-label="Available helper roles">
+      <article class="card helper">
+        <div class="card-head">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></svg></div>
+          <div><h2>Explorer</h2><div class="model">gpt-6-luna</div></div>
+        </div>
+        <div class="tags"><span>high effort</span><span>read-only</span></div>
+        <p>Find relevant code, trace behavior, and return precise file locations.</p>
+      </article>
+      <article class="card helper">
+        <div class="card-head">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3zM12 6v15M6 8h3M6 12h3M15 8h3M15 12h3"/></svg></div>
+          <div><h2>Researcher</h2><div class="model">gpt-6-luna</div></div>
+        </div>
+        <div class="tags"><span>high effort</span><span>read-only</span></div>
+        <p>Verify a specific technical question with authoritative sources.</p>
+      </article>
+      <article class="card helper">
+        <div class="card-head">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5-6 7 6 7M16 5l6 7-6 7M14 3l-4 18"/></svg></div>
+          <div><h2>Worker</h2><div class="model">gpt-6.1-sol</div></div>
+        </div>
+        <div class="tags"><span>high effort</span><span>workspace-write</span></div>
+        <p>Implement one bounded change and run the relevant tests.</p>
+      </article>
+      <article class="card helper reviewer">
+        <div class="card-head">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6zM8 12l3 3 5-6"/></svg></div>
+          <div><h2>Reviewer</h2><div class="model">gpt-6-astra</div></div>
+        </div>
+        <div class="tags"><span>low effort</span><span>read-only</span></div>
+        <p>Resolve correctness concerns, difficult architecture, or conflicting evidence.</p>
+      </article>
+    </section>
+
+    <div class="connector" aria-hidden="true"><span>Return evidence to the coordinator</span></div>
+
+    <section class="card result" aria-labelledby="result-title">
+      <h2 id="result-title">Integrate → verify → report</h2>
+      <p>The coordinator checks helper results, resolves conflicts, and proves the final behavior before calling the task complete.</p>
+    </section>
+
+    <section class="principles" aria-label="Working principles">
+      <div><strong>One file, one owner</strong><p>Keep edits scoped and coordinate before touching shared files.</p></div>
+      <div><strong>Delegate when useful</strong><p>Use only the helpers the task needs. Close finished work before adding more.</p></div>
+      <div><strong>Share settings only</strong><p>Credentials, history, personal projects, MCP, plugins, and skills stay outside the template.</p></div>
+    </section>
+    <footer>Model access depends on your account and environment. Review choices before installing.<br><a href="../README.md">Installation and configuration guide</a></footer>
+  </main>
+</body>
+</html>

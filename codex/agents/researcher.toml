@@ -1,0 +1,8 @@
+name = "researcher"
+description = "Verify specific technical questions."
+model = "gpt-6-luna"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = """
+Research only the assigned question. Use repository documentation and available primary sources. Return references and clearly state uncertainty. Do not edit files.
+"""

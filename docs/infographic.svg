@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1220" viewBox="0 0 1200 1220" role="img" aria-labelledby="title description">
+<title id="title">Codex Lean agent map</title><desc id="description">A Sol coordinator delegates bounded tasks to Luna explorer and researcher, Sol worker, and Astra reviewer. Up to three helpers run concurrently; the coordinator integrates and verifies results.</desc>
+<defs><radialGradient id="background"><stop stop-color="#16353c"/><stop offset="1" stop-color="#081419"/></radialGradient></defs>
+<rect width="1200" height="1220" fill="url(#background)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="600" y="51" font-size="15" fill="#85efd0" text-anchor="middle" font-weight="bold">SHARED SETTINGS · DELIBERATE DELEGATION</text>
+<text x="600" y="112" font-size="58" fill="#e8f2ef" text-anchor="middle" font-weight="bold">Codex Lean</text>
+<text x="600" y="153" font-size="23" fill="#a5babd" text-anchor="middle" font-weight="normal">One coordinator. Bounded tasks. Verified results.</text>
+<rect x="280" y="190" width="640" height="190" rx="18" fill="#10242b" stroke="#85efd0" stroke-width="1.5"/>
+<text x="600" y="233" font-size="27" fill="#e8f2ef" text-anchor="middle" font-weight="bold">Root / coordinator</text>
+<text x="600" y="269" font-size="21" fill="#85efd0" text-anchor="middle" font-weight="normal">gpt-6.1-sol  ·  medium effort</text>
+<text x="600" y="301" font-size="18" fill="#a5babd" text-anchor="middle" font-weight="normal">Uses your existing sandbox setting</text>
+<text x="600" y="334" font-size="19" fill="#a5babd" text-anchor="middle" font-weight="normal">Plans, chooses useful helpers, integrates changes, and runs</text>
+<text x="600" y="361" font-size="19" fill="#a5babd" text-anchor="middle" font-weight="normal">final verification. Handles simple tasks directly.</text>
+<path d="M600 380L600 410" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<text x="600" y="440" font-size="20" fill="#85efd0" text-anchor="middle" font-weight="normal">Delegate a clear scope · up to 3 helpers active</text>
+<path d="M600 451L600 469" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<path d="M180 469L1020 469" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<path d="M180 469L180 492" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<rect x="50" y="492" width="260" height="297" rx="18" fill="#10242b" stroke="#294650" stroke-width="1.5"/>
+<text x="74" y="537" font-size="25" fill="#e8f2ef" text-anchor="start" font-weight="bold">Explorer</text>
+<text x="74" y="575" font-size="21" fill="#85efd0" text-anchor="start" font-weight="normal">gpt-6-luna</text>
+<text x="74" y="610" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">high effort</text>
+<text x="74" y="640" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">read-only</text>
+<text x="74" y="682" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Find relevant code,</text>
+<text x="74" y="707" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">trace behavior, and</text>
+<text x="74" y="732" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">return precise file</text>
+<text x="74" y="757" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">locations.</text>
+<path d="M460 469L460 492" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<rect x="330" y="492" width="260" height="297" rx="18" fill="#10242b" stroke="#294650" stroke-width="1.5"/>
+<text x="354" y="537" font-size="25" fill="#e8f2ef" text-anchor="start" font-weight="bold">Researcher</text>
+<text x="354" y="575" font-size="21" fill="#85efd0" text-anchor="start" font-weight="normal">gpt-6-luna</text>
+<text x="354" y="610" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">high effort</text>
+<text x="354" y="640" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">read-only</text>
+<text x="354" y="682" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Verify a specific</text>
+<text x="354" y="707" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">technical question with</text>
+<text x="354" y="732" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">authoritative sources.</text>
+<path d="M740 469L740 492" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<rect x="610" y="492" width="260" height="297" rx="18" fill="#10242b" stroke="#294650" stroke-width="1.5"/>
+<text x="634" y="537" font-size="25" fill="#e8f2ef" text-anchor="start" font-weight="bold">Worker</text>
+<text x="634" y="575" font-size="21" fill="#85efd0" text-anchor="start" font-weight="normal">gpt-6.1-sol</text>
+<text x="634" y="610" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">high effort</text>
+<text x="634" y="640" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">workspace-write</text>
+<text x="634" y="682" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Implement one bounded</text>
+<text x="634" y="707" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">change and run the</text>
+<text x="634" y="732" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">relevant tests.</text>
+<path d="M1020 469L1020 492" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<rect x="890" y="492" width="260" height="297" rx="18" fill="#10242b" stroke="#786546" stroke-width="1.5"/>
+<text x="914" y="537" font-size="25" fill="#e8f2ef" text-anchor="start" font-weight="bold">Reviewer</text>
+<text x="914" y="575" font-size="21" fill="#f5c77e" text-anchor="start" font-weight="normal">gpt-6-astra</text>
+<text x="914" y="610" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">low effort</text>
+<text x="914" y="640" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">read-only</text>
+<text x="914" y="682" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Resolve correctness</text>
+<text x="914" y="707" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">concerns, difficult</text>
+<text x="914" y="732" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">architecture, or</text>
+<text x="914" y="757" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">conflicting evidence.</text>
+<path d="M600 790L600 815" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<text x="600" y="842" font-size="20" fill="#85efd0" text-anchor="middle" font-weight="normal">Return evidence to the coordinator</text>
+<path d="M600 854L600 876" stroke="#85efd0" stroke-width="1.5" opacity=".6"/>
+<rect x="280" y="876" width="640" height="126" rx="18" fill="#12332f" stroke="#357f6d" stroke-width="1.5"/>
+<text x="600" y="920" font-size="26" fill="#85efd0" text-anchor="middle" font-weight="bold">Integrate → verify → report</text>
+<text x="600" y="956" font-size="19" fill="#a5babd" text-anchor="middle" font-weight="normal">Check helper results, resolve conflicts, and prove the final</text>
+<text x="600" y="982" font-size="19" fill="#a5babd" text-anchor="middle" font-weight="normal">behavior before reporting completion.</text>
+<path d="M50 1039H1150" stroke="#294650"/>
+<text x="50" y="1080" font-size="22" fill="#e8f2ef" text-anchor="start" font-weight="bold">One file, one owner</text>
+<text x="50" y="1113" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Keep edits scoped; coordinate</text>
+<text x="50" y="1138" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">before touching shared files.</text>
+<text x="450" y="1080" font-size="22" fill="#e8f2ef" text-anchor="start" font-weight="bold">Delegate when useful</text>
+<text x="450" y="1113" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Use only the helpers needed.</text>
+<text x="450" y="1138" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Close finished work first.</text>
+<text x="850" y="1080" font-size="22" fill="#e8f2ef" text-anchor="start" font-weight="bold">Share settings only</text>
+<text x="850" y="1113" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">Credentials, history, and</text>
+<text x="850" y="1138" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">personal configuration stay</text>
+<text x="850" y="1163" font-size="18" fill="#a5babd" text-anchor="start" font-weight="normal">private.</text>
+<text x="600" y="1190" font-size="16" fill="#a5babd" text-anchor="middle" font-weight="normal">Model access depends on your account and environment.</text>
+</g></svg>
